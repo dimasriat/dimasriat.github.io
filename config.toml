@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://dimasriat.github.io'
 languageCode = 'en-us'
 title = 'dimasriat'
 theme = "PaperMod"
