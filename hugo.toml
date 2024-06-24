@@ -16,4 +16,19 @@ tag = "tags"
 trading = "trading"
 dev = "dev"
 
+[[menu.primary]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.primary]]
+name = "About"
+url = "/about"
+weight = 2
+
+[[menu.primary]]
+name = "Trading Journal"
+url = "/trading"
+weight = 3
+
 # https://github.com/M1cR0xf7/kaslaanka?tab=readme-ov-file#configtoml
