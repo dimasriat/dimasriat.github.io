@@ -22,8 +22,8 @@ menu:
       url: /about
       weight: 1
     - identifier: tags
-      name: tags
-      url: /tags/
+      name: Tags
+      url: /tags
       weight: 2
 
 # https://github.com/M1cR0xf7/kaslaanka?tab=readme-ov-file#configtoml
