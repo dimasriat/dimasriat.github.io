@@ -1,0 +1,29 @@
+baseURL: 'https://dims.sh'
+languageCode: 'en-us'
+title: 'dims.sh'
+theme: 'PaperMod'
+params:
+  homeInfoParams:
+    Title: Hi there! I am Dimas
+    Content: A software dev, crypto trader and open source contributor
+  socialIcons: # optional
+    - name: "github"
+      url: "https://github.com/dimasriat"
+    - name: "twitter"
+      url: "https://x.com/0xDimss"
+
+taxonomies:
+  tag: "tags"
+
+menu:
+  main:
+    - identifier: about
+      name: About
+      url: /about
+      weight: 1
+    - identifier: tags
+      name: tags
+      url: /tags/
+      weight: 2
+
+# https://github.com/M1cR0xf7/kaslaanka?tab=readme-ov-file#configtoml

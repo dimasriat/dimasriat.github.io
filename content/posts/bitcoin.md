@@ -1,6 +1,6 @@
 +++
 title = 'Bitcoin'
-date = 2024-03-12T23:05:03+07:00
+date = 2024-03-13T23:05:03+07:00
 draft = true
 
 tags = ['trading']
