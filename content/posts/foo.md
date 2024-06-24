@@ -3,7 +3,7 @@ title = 'Some Foo'
 date = 2024-03-14T23:05:03+07:00
 draft = true
 
-tags = ['bar']
+tags = ['programming']
 +++
 
 That’s setting a very high bar, and, for now, I’m not sure Alyx clears it. The
