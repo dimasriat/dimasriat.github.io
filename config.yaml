@@ -5,7 +5,7 @@ theme: 'PaperMod'
 params:
   homeInfoParams:
     Title: Hi there! I am Dimas
-    Content: A software dev, crypto trader and open source contributor
+    Content: A software dev, web3 enthusiast and open source contributor
   socialIcons: # optional
     - name: "github"
       url: "https://github.com/dimasriat"
