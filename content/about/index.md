@@ -1,14 +1,24 @@
 +++
 title = 'About'
-date = 2024-03-12T23:05:03+07:00
-draft = true
+draft = false
 +++
 
-gm, this is an about page.
+If you’re new to my website I suggest exploring my articles or my career log as
+they give context to how I became who I am today. If you remain, welcome
+aboard, space pirate.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-culpa qui officia deserunt mollit anim id est laborum.
+## Why?
+
+For some context, the purpose of this is to both act as:
+1. A public record to keep me on track w/ my commitments and for reflection
+2. An inspiration to those wondering how I got to where I am. I would sure love to read other autobiographies :(
+
+## Foreword
+
+My focus is to be at the intersection of `software, crypto, finance and maths`.
+
+I hope you enjoy reading about my life :)
+
+## Journal
+
+[Trading Journal](/trading-journal)
