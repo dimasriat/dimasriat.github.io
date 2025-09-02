@@ -1,0 +1,44 @@
+{{- define "main" }}
+<div class="terminal-posts">
+    <header class="posts-header">
+        <div class="posts-info">
+            <h1>{{ .Title }}</h1>
+        </div>
+        <div class="posts-meta">
+            <span class="count">total {{ len .Pages }}</span>
+        </div>
+    </header>
+    
+    <div class="posts-separator"></div>
+    
+    <div class="posts-list">
+        <div class="posts-header-row">
+            <div class="col-date">DATE</div>
+            <div class="col-title">TITLE</div>
+        </div>
+        
+        <div class="posts-header-separator"></div>
+        
+        {{- range .Pages.ByDate.Reverse }}
+        <div class="post-row">
+            <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
+            <div class="col-title">
+                {{- $iconClass := site.Params.tagIcons.default }}
+                {{- if .Params.tags }}
+                    {{- $firstTag := index .Params.tags 0 }}
+                    {{- $tagIcon := index site.Params.tagIcons $firstTag }}
+                    {{- if $tagIcon }}
+                        {{- $iconClass = $tagIcon }}
+                    {{- end }}
+                {{- end }}
+                <i class="nf {{ $iconClass }} post-icon"></i>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{- if .Params.lang }}
+                <span class="post-lang">[{{ .Params.lang }}]</span>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+    </div>
+</div>
+{{- end }}
