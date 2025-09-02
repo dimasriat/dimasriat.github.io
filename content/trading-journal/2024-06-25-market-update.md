@@ -2,6 +2,7 @@
 title = 'Market Update'
 date = 2024-06-25T12:24:43+07:00
 draft = false
+category = 'trading'
 tags = ['trading']
 +++
 

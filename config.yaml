@@ -1,8 +1,11 @@
-baseURL: 'https://dims.sh'
+baseURL: 'http://dims.sh'
 languageCode: 'en-us'
 title: 'dims.sh'
-theme: 'PaperMod'
+theme: 'dims-theme'
 params:
+  mainSections:
+    - posts
+    - trading-journal
   homeInfoParams:
     Title: Hi there! I am Dimas
     Content: A software dev, web3 enthusiast and open source contributor
@@ -17,17 +20,13 @@ taxonomies:
 
 menu:
   main:
-    - identifier: about
-      name: About
-      url: /about
+    - identifier: posts
+      name: Posts
+      url: /posts
       weight: 1
-    - identifier: projects
-      name: Projects
-      url: /projects
-      weight: 2
     - identifier: tags
       name: Tags
       url: /tags
-      weight: 3
+      weight: 2
 
 # https://github.com/M1cR0xf7/kaslaanka?tab=readme-ov-file#configtoml

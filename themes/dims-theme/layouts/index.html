@@ -1,0 +1,14 @@
+{{- define "main" }}
+<div class="page-content">
+    {{- if .Content }}
+    <section class="home-content">
+        {{ .Content }}
+    </section>
+    {{- else }}
+    <section class="home-intro">
+        <h1>{{ site.Params.homeInfoParams.Title }}</h1>
+        <p>{{ site.Params.homeInfoParams.Content }}</p>
+    </section>
+    {{- end }}
+</div>
+{{- end }}
