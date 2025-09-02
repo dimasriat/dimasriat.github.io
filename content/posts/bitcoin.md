@@ -2,7 +2,6 @@
 title = 'Bitcoin'
 date = 2024-03-13T23:05:03+07:00
 draft = true
-category = 'trading'
 tags = ['trading']
 +++
 

@@ -14,7 +14,7 @@ params:
       url: "https://github.com/dimasriat"
     - name: "twitter"
       url: "https://x.com/0xDimss"
-  categoryIcons:
+  tagIcons:
     trading: "nf-fa-line_chart"      # FontAwesome line chart
     code: "nf-dev-code"              # Devicons code brackets
     life: "nf-fa-home"               # FontAwesome home

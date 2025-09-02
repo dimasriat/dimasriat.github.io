@@ -25,11 +25,12 @@
         <div class="post-row">
             <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
             <div class="col-title">
-                {{- $iconClass := site.Params.categoryIcons.default }}
-                {{- if .Params.category }}
-                    {{- $categoryIcon := index site.Params.categoryIcons .Params.category }}
-                    {{- if $categoryIcon }}
-                        {{- $iconClass = $categoryIcon }}
+                {{- $iconClass := site.Params.tagIcons.default }}
+                {{- if .Params.tags }}
+                    {{- $firstTag := index .Params.tags 0 }}
+                    {{- $tagIcon := index site.Params.tagIcons $firstTag }}
+                    {{- if $tagIcon }}
+                        {{- $iconClass = $tagIcon }}
                     {{- end }}
                 {{- end }}
                 <i class="nf {{ $iconClass }} post-icon"></i>
