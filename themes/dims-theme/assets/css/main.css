@@ -574,28 +574,29 @@ a:hover {
     display: flex;
     align-items: center;
     gap: 0.5rem;
+    color: var(--terminal-green);
+    font-size: 0.95rem;
+}
+
+.posts-info .prompt {
+    color: var(--terminal-cyan);
 }
 
 .posts-meta {
     display: flex;
     gap: 2rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
+    color: var(--dim-text);
 }
 
-.posts-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
 
 .posts-separator {
     color: var(--border-color);
-    opacity: 0.8;
-    margin-bottom: 1.5rem;
-    font-size: 0.7rem;
-    letter-spacing: -0.05em;
-    overflow: hidden;
-    font-family: var(--font-mono);
+    opacity: 0.5;
+    margin: 1rem 0;
+    font-size: 0.8rem;
+    letter-spacing: 0.2em;
+    text-align: center;
 }
 
 .posts-table {
@@ -605,15 +606,32 @@ a:hover {
 
 .posts-table thead th {
     text-align: left;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 0;
     border-bottom: 1px solid var(--border-color);
-    opacity: 0.7;
-    font-weight: 500;
-    font-size: 0.9rem;
+    color: var(--dim-text);
+    font-weight: 400;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.type-col {
+    width: 40px;
+    text-align: center;
 }
 
 .date-col {
-    width: 120px;
+    width: 110px;
+}
+
+.post-type {
+    text-align: center;
+    color: var(--terminal-cyan);
+    font-size: 0.9rem;
+}
+
+.type-icon {
+    font-weight: 400;
 }
 
 .posts-table tbody tr {
@@ -635,8 +653,14 @@ a:hover {
     padding: 0.5rem 0;
 }
 
-.post-icon {
-    margin-right: 0.5rem;
+.post-lang {
+    opacity: 0.5;
+    margin-left: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.dim {
+    opacity: 0.5;
 }
 
 .post-title a {
