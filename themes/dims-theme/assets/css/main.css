@@ -6,17 +6,17 @@
 }
 
 :root {
-    /* Terminal Colors - Modern Terminal Theme */
+    /* Monochrome Color Scheme */
     --bg-color: #0c0c0c;
-    --text-color: #f0f0f0;
+    --text-color: #ffffff;
     --heading-color: #ffffff;
-    --link-color: #00ffff;
-    --link-hover: #00cccc;
+    --link-color: #ffffff;
+    --link-hover: #cccccc;
     --border-color: #333333;
     --code-bg: #1a1a1a;
     --tag-bg: #1a1a1a;
-    --tag-color: #00ff00;
-    --accent-color: #00ff00;
+    --tag-color: #ffffff;
+    --accent-color: #ffffff;
     --dim-text: #888888;
     
     /* Typography */
@@ -26,12 +26,6 @@
     /* Spacing */
     --spacing-unit: 1rem;
     --max-width: 800px;
-    
-    /* Terminal UI */
-    --terminal-green: #00ff00;
-    --terminal-cyan: #00ffff;
-    --terminal-yellow: #ffff00;
-    --terminal-red: #ff0000;
 }
 
 /* Base */
@@ -113,7 +107,7 @@ a:hover {
     left: 0;
     right: 0;
     height: 1px;
-    background: linear-gradient(to right, transparent, var(--border-color) 20%, var(--border-color) 80%, transparent);
+    background: var(--border-color);
 }
 
 .site-nav {
@@ -127,7 +121,7 @@ a:hover {
 .site-title {
     font-size: 1.1rem;
     font-weight: 400;
-    color: var(--terminal-green);
+    color: var(--text-color);
     letter-spacing: 0.05em;
     text-transform: lowercase;
     text-decoration: none;
@@ -136,13 +130,13 @@ a:hover {
 
 .site-title::before {
     content: '$ ';
-    color: var(--terminal-cyan);
+    color: var(--dim-text);
     opacity: 0.8;
 }
 
 .site-title:hover {
     text-decoration: none;
-    color: var(--terminal-cyan);
+    color: var(--link-hover);
     background-color: transparent;
 }
 
@@ -175,7 +169,7 @@ a:hover {
 }
 
 .nav-menu a.active {
-    color: var(--terminal-cyan);
+    color: var(--text-color);
     border-color: transparent;
 }
 
@@ -208,7 +202,7 @@ a:hover {
     font-size: 1.6rem;
     margin-bottom: var(--spacing-unit);
     font-weight: 400;
-    color: var(--terminal-green);
+    color: var(--text-color);
 }
 
 .home-intro p {
@@ -255,9 +249,9 @@ a:hover {
 }
 
 .social-icons a:hover {
-    color: var(--terminal-cyan);
-    background-color: rgba(0, 255, 255, 0.1);
-    border-color: var(--terminal-cyan);
+    color: var(--text-color);
+    background-color: var(--code-bg);
+    border-color: var(--border-color);
 }
 
 .social-icons svg {
@@ -311,7 +305,7 @@ a:hover {
 
 .tag {
     background-color: transparent;
-    color: var(--terminal-cyan);
+    color: var(--dim-text);
     padding: 0.125rem 0.5rem;
     border: 1px solid var(--border-color);
     font-size: 0.85rem;
@@ -331,9 +325,10 @@ a:hover {
 }
 
 .tag:hover {
-    border-color: var(--terminal-cyan);
-    background-color: rgba(0, 255, 255, 0.1);
+    border-color: var(--dim-text);
+    background-color: var(--code-bg);
     text-decoration: none;
+    color: var(--text-color);
 }
 
 /* Single post */
@@ -460,19 +455,7 @@ a:hover {
 .site-footer {
     margin-top: calc(var(--spacing-unit) * 4);
     padding: calc(var(--spacing-unit) * 2) 0;
-    border-top: 1px dashed var(--border-color);
-    position: relative;
-}
-
-.site-footer::before {
-    content: '════════════════════════════════════════════════════════════════════════════════';
-    position: absolute;
-    top: -1px;
-    left: 0;
-    right: 0;
-    color: var(--border-color);
-    text-align: center;
-    overflow: hidden;
+    border-top: 1px solid var(--border-color);
 }
 
 .footer-content {
@@ -565,126 +548,93 @@ a:hover {
 .posts-header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     margin-bottom: 1rem;
-    opacity: 0.8;
 }
 
-.posts-info {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--terminal-green);
-    font-size: 0.95rem;
-}
-
-.posts-info .prompt {
-    color: var(--terminal-cyan);
+.posts-info h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
 }
 
 .posts-meta {
-    display: flex;
-    gap: 2rem;
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: var(--dim-text);
 }
 
-
-.posts-separator {
-    color: var(--border-color);
-    opacity: 0.5;
+.posts-separator,
+.posts-header-separator {
+    height: 1px;
+    background: var(--border-color);
     margin: 1rem 0;
-    font-size: 0.8rem;
-    letter-spacing: 0.2em;
-    text-align: center;
+    border: none;
 }
 
-.posts-table {
-    width: 100%;
-    border-collapse: collapse;
+.posts-list {
+    margin-top: 1rem;
 }
 
-.posts-table thead th {
-    text-align: left;
-    padding: 0.5rem 0;
-    border-bottom: 1px solid var(--border-color);
+.posts-header-row,
+.post-row {
+    display: grid;
+    grid-template-columns: 60px 120px 1fr;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.posts-header-row {
     color: var(--dim-text);
-    font-weight: 400;
     font-size: 0.85rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
 }
 
-.type-col {
-    width: 40px;
-    text-align: center;
+.post-row {
+    padding: 0.25rem 0;
+    transition: background-color 0.2s ease;
 }
 
-.date-col {
-    width: 110px;
-}
-
-.post-type {
-    text-align: center;
-    color: var(--terminal-cyan);
-    font-size: 0.9rem;
-}
-
-.type-icon {
-    font-weight: 400;
-}
-
-.posts-table tbody tr {
-    border-bottom: 1px solid var(--border-color);
-    border-color: transparent;
-}
-
-.posts-table tbody tr:hover {
+.post-row:hover {
     background-color: var(--code-bg);
 }
 
-.post-date {
-    padding: 0.5rem 0;
-    opacity: 0.7;
-    font-size: 0.9rem;
+.col-icon {
+    text-align: left;
+    color: var(--dim-text);
 }
 
-.post-title {
-    padding: 0.5rem 0;
+.col-date {
+    text-align: left;
+    color: var(--dim-text);
 }
 
-.post-lang {
-    opacity: 0.5;
-    margin-left: 0.5rem;
-    font-size: 0.85rem;
+.col-title {
+    text-align: left;
 }
 
-.dim {
-    opacity: 0.5;
-}
-
-.post-title a {
+.col-title a {
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.2s ease;
 }
 
-.post-title a:hover {
+.col-title a:hover {
     color: var(--link-color);
-    text-decoration: none;
 }
 
 .post-lang {
-    opacity: 0.5;
+    color: var(--dim-text);
     margin-left: 0.5rem;
     font-size: 0.85rem;
 }
 
-/* Dark mode adjustments for posts */
-@media (prefers-color-scheme: dark) {
-    .posts-table tbody tr:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-    }
+.type-icon {
+    font-weight: 400;
 }
 
 /* Mobile responsive for posts */
@@ -695,12 +645,111 @@ a:hover {
         gap: 0.5rem;
     }
     
-    .date-col {
-        width: 90px;
+    .posts-header-row,
+    .post-row {
+        grid-template-columns: 50px 100px 1fr;
+        font-size: 0.85rem;
     }
     
-    .post-date,
-    .post-title {
+    .col-date {
+        font-size: 0.85rem;
+    }
+}
+
+/* Terminal-style tags page */
+.terminal-tags {
+    font-family: var(--font-mono);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.tags-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 1rem;
+}
+
+.tags-info h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-color);
+}
+
+.tags-meta {
+    font-size: 0.9rem;
+    color: var(--dim-text);
+}
+
+.tags-separator,
+.tags-header-separator {
+    height: 1px;
+    background: var(--border-color);
+    margin: 1rem 0;
+    border: none;
+}
+
+.tags-list {
+    margin-top: 1rem;
+}
+
+.tags-header-row,
+.tag-row {
+    display: grid;
+    grid-template-columns: 1fr 100px;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.tags-header-row {
+    color: var(--dim-text);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+}
+
+.tag-row {
+    padding: 0.25rem 0;
+    transition: background-color 0.2s ease;
+}
+
+.tag-row:hover {
+    background-color: var(--code-bg);
+}
+
+.col-tag {
+    text-align: left;
+}
+
+.col-tag a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.col-tag a:hover {
+    color: var(--link-hover);
+}
+
+.col-count {
+    text-align: right;
+    color: var(--dim-text);
+}
+
+/* Mobile responsive for tags */
+@media (max-width: 600px) {
+    .tags-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .tags-header-row,
+    .tag-row {
         font-size: 0.85rem;
     }
 }
@@ -714,18 +763,18 @@ a:hover {
 .cursor::after {
     content: '_';
     display: inline-block;
-    color: var(--terminal-green);
+    color: var(--text-color);
     animation: blink 1s infinite;
     font-weight: 700;
 }
 
 /* Selection styling */
 ::selection {
-    background-color: var(--terminal-cyan);
+    background-color: var(--dim-text);
     color: var(--bg-color);
 }
 
 ::-moz-selection {
-    background-color: var(--terminal-cyan);
+    background-color: var(--dim-text);
     color: var(--bg-color);
 }

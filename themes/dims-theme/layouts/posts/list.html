@@ -2,7 +2,7 @@
 <div class="terminal-posts">
     <header class="posts-header">
         <div class="posts-info">
-            <span class="prompt">$</span> ls posts/
+            <h1>Posts</h1>
         </div>
         <div class="posts-meta">
             {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
@@ -10,43 +10,42 @@
         </div>
     </header>
     
-    <div class="posts-separator">────────────────────────────────────────────────</div>
+    <div class="posts-separator"></div>
     
-    <table class="posts-table">
-        <thead>
-            <tr>
-                <th class="type-col"></th>
-                <th class="date-col">Date</th>
-                <th class="title-col">Title</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
-            {{- range $posts.ByDate.Reverse }}
-            <tr>
-                <td class="post-type">
-                    {{- $icon := "*" }}
-                    {{- if .Params.category }}
-                        {{- if eq .Params.category "trading" }}{{ $icon = "$" }}
-                        {{- else if eq .Params.category "code" }}{{ $icon = ">" }}
-                        {{- else if eq .Params.category "life" }}{{ $icon = "@" }}
-                        {{- else if eq .Params.category "tech" }}{{ $icon = "#" }}
-                        {{- else if eq .Params.category "thoughts" }}{{ $icon = "~" }}
-                        {{- else if eq .Params.category "analysis" }}{{ $icon = "%" }}
-                        {{- end }}
+    <div class="posts-list">
+        <div class="posts-header-row">
+            <div class="col-icon"></div>
+            <div class="col-date">DATE</div>
+            <div class="col-title">TITLE</div>
+        </div>
+        
+        <div class="posts-header-separator"></div>
+        
+        {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
+        {{- range $posts.ByDate.Reverse }}
+        <div class="post-row">
+            <div class="col-icon">
+                {{- $icon := "*" }}
+                {{- if .Params.category }}
+                    {{- if eq .Params.category "trading" }}{{ $icon = "$" }}
+                    {{- else if eq .Params.category "code" }}{{ $icon = ">" }}
+                    {{- else if eq .Params.category "life" }}{{ $icon = "@" }}
+                    {{- else if eq .Params.category "tech" }}{{ $icon = "#" }}
+                    {{- else if eq .Params.category "thoughts" }}{{ $icon = "~" }}
+                    {{- else if eq .Params.category "analysis" }}{{ $icon = "%" }}
                     {{- end }}
-                    <span class="type-icon">[{{ $icon }}]</span>
-                </td>
-                <td class="post-date">{{ .Date.Format "2006-01-02" }}</td>
-                <td class="post-title">
-                    <a href="{{ .Permalink }}">{{ .Title }}</a>
-                    {{- if .Params.lang }}
-                    <span class="post-lang dim">[{{ .Params.lang }}]</span>
-                    {{- end }}
-                </td>
-            </tr>
-            {{- end }}
-        </tbody>
-    </table>
+                {{- end }}
+                <span class="type-icon">[{{ $icon }}]</span>
+            </div>
+            <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
+            <div class="col-title">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                {{- if .Params.lang }}
+                <span class="post-lang">[{{ .Params.lang }}]</span>
+                {{- end }}
+            </div>
+        </div>
+        {{- end }}
+    </div>
 </div>
 {{- end }}
