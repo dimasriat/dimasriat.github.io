@@ -26,4 +26,4 @@ I hope you enjoy reading about my life :)
 
 ## Social
 
-[GitHub](https://github.com) • [Twitter](https://twitter.com) • [Email](mailto:email@example.com)
+[Twitter / X](https://x.com/0xDimss) • [GitHub](https://github.com/dimasriat) • [Mail](mailto:gm@dims.sh)
