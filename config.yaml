@@ -16,7 +16,8 @@ params:
       url: "https://x.com/0xDimss"
   tagIcons:
     trading: "nf-fa-line_chart"      # FontAwesome line chart
-    code: "nf-dev-code"              # Devicons code brackets
+    code: "nf-md-code_braces"        # Devicons code brackets
+    note: "nf-md-note_text"
     life: "nf-fa-home"               # FontAwesome home
     tech: "nf-dev-terminal"          # Devicons terminal
     thoughts: "nf-fa-comment"        # FontAwesome comment bubble
