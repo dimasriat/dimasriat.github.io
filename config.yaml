@@ -14,6 +14,15 @@ params:
       url: "https://github.com/dimasriat"
     - name: "twitter"
       url: "https://x.com/0xDimss"
+  tagIcons:
+    trading: "nf-fa-line_chart"      # FontAwesome line chart
+    code: "nf-md-code_braces"        # Devicons code brackets
+    note: "nf-md-note_text"
+    life: "nf-fa-home"               # FontAwesome home
+    tech: "nf-dev-terminal"          # Devicons terminal
+    thoughts: "nf-fa-comment"        # FontAwesome comment bubble
+    analysis: "nf-fa-bar_chart"      # FontAwesome bar chart
+    default: "nf-fa-file_o"          # FontAwesome file outline (fallback)
 
 taxonomies:
   tag: "tags"

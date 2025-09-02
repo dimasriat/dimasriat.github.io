@@ -2,11 +2,10 @@
 <div class="terminal-posts">
     <header class="posts-header">
         <div class="posts-info">
-            <h1>Posts</h1>
+            <h1>{{ .Title }}</h1>
         </div>
         <div class="posts-meta">
-            {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
-            <span class="count">total {{ len $posts }}</span>
+            <span class="count">total {{ len .Pages }}</span>
         </div>
     </header>
     
@@ -20,8 +19,7 @@
         
         <div class="posts-header-separator"></div>
         
-        {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
-        {{- range $posts.ByDate.Reverse }}
+        {{- range .Pages.ByDate.Reverse }}
         <div class="post-row">
             <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
             <div class="col-title">

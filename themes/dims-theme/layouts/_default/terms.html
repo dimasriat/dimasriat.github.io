@@ -22,7 +22,15 @@
         {{- range .Data.Terms.Alphabetical }}
         <div class="tag-row">
             <div class="col-tag">
-                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+                {{- $iconClass := site.Params.tagIcons.default }}
+                {{- $tagIcon := index site.Params.tagIcons .Page.Title }}
+                {{- if $tagIcon }}
+                    {{- $iconClass = $tagIcon }}
+                {{- end }}
+                <a href="{{ .Page.Permalink }}">
+                    <i class="nf {{ $iconClass }} tag-icon"></i>
+                    {{ .Page.Title }}
+                </a>
             </div>
             <div class="col-count">{{ .Count }}</div>
         </div>

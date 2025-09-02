@@ -2,9 +2,8 @@
 title = 'Some Foo'
 date = 2024-03-14T23:05:03+07:00
 draft = false
-category = 'code'
-lang = 'general'
-tags = ['programming']
+# lang = 'general'
+tags = ['code']
 +++
 
 That’s setting a very high bar, and, for now, I’m not sure Alyx clears it. The

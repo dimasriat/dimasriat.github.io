@@ -16,6 +16,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&display=swap" rel="stylesheet">
 
+<!-- Nerd Fonts Icons -->
+<link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css">
+
 {{- $css := resources.Get "css/main.css" }}
 {{- $style := $css | resources.Minify | resources.Fingerprint }}
 <link rel="stylesheet" href="{{ $style.Permalink }}">
