@@ -15,7 +15,7 @@
     
     <section class="recent-posts">
         <h2>Recent Posts</h2>
-        {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{- $pages := where site.RegularPages "Section" "in" site.Params.mainSections }}
         {{- $paginator := .Paginate $pages }}
         {{- range $paginator.Pages }}
         <article class="post-entry">

@@ -1,0 +1,55 @@
+{{- define "main" }}
+<div class="terminal-posts">
+    <header class="posts-header">
+        <div class="posts-info">
+            <span class="icon">📁</span> posts
+        </div>
+        <div class="posts-meta">
+            <span class="date">{{ now.Format "2006-01-02" }}</span>
+            <span class="count">*posts*</span>
+        </div>
+    </header>
+    
+    <div class="posts-title">
+        Posts
+    </div>
+    
+    <div class="posts-separator">
+        ================================================================================
+    </div>
+    
+    <table class="posts-table">
+        <thead>
+            <tr>
+                <th class="date-col">📅 Date</th>
+                <th class="title-col">📄 Title</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
+            {{- range $posts.ByDate.Reverse }}
+            <tr>
+                <td class="post-date">{{ .Date.Format "2006-01-02" }}</td>
+                <td class="post-title">
+                    {{- $icon := "📝" }}
+                    {{- if .Params.category }}
+                        {{- if eq .Params.category "trading" }}{{ $icon = "📈" }}
+                        {{- else if eq .Params.category "code" }}{{ $icon = "💻" }}
+                        {{- else if eq .Params.category "life" }}{{ $icon = "📝" }}
+                        {{- else if eq .Params.category "tech" }}{{ $icon = "🔧" }}
+                        {{- else if eq .Params.category "thoughts" }}{{ $icon = "💭" }}
+                        {{- else if eq .Params.category "analysis" }}{{ $icon = "📊" }}
+                        {{- end }}
+                    {{- end }}
+                    <span class="post-icon">{{ $icon }}</span>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    {{- if .Params.lang }}
+                    <span class="post-lang">[{{ .Params.lang }}]</span>
+                    {{- end }}
+                </td>
+            </tr>
+            {{- end }}
+        </tbody>
+    </table>
+</div>
+{{- end }}

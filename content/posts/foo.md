@@ -2,7 +2,8 @@
 title = 'Some Foo'
 date = 2024-03-14T23:05:03+07:00
 draft = false
-
+category = 'code'
+lang = 'general'
 tags = ['programming']
 +++
 
