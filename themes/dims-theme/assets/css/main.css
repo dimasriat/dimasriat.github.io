@@ -163,6 +163,23 @@ a:hover {
     font-weight: 400;
 }
 
+/* Home content (custom markdown) */
+.home-content {
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.home-content h1:first-child {
+    text-align: center;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.home-content > p:first-of-type {
+    text-align: center;
+    font-size: 1.15rem;
+    opacity: 0.8;
+    margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
 /* Social icons */
 .social-icons {
     display: flex;

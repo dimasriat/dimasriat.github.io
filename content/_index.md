@@ -1,11 +1,12 @@
 +++
-title = 'About'
-draft = false
+title = 'Home'
 +++
 
-If you’re new to my website I suggest exploring my articles or my career log as
-they give context to how I became who I am today. If you remain, welcome
-aboard, space pirate.
+# Hi there! I am Dimas
+
+A software dev, web3 enthusiast and open source contributor.
+
+If you're new to my website I suggest exploring my articles or my career log as they give context to how I became who I am today. If you remain, welcome aboard, space pirate.
 
 ## Why?
 
