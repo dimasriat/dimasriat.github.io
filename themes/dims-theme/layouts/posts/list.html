@@ -25,17 +25,14 @@
         <div class="post-row">
             <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
             <div class="col-title">
-                {{- $icon := "●" }}
+                {{- $iconClass := site.Params.categoryIcons.default }}
                 {{- if .Params.category }}
-                    {{- if eq .Params.category "trading" }}{{ $icon = "◆" }}
-                    {{- else if eq .Params.category "code" }}{{ $icon = "▶" }}
-                    {{- else if eq .Params.category "life" }}{{ $icon = "●" }}
-                    {{- else if eq .Params.category "tech" }}{{ $icon = "■" }}
-                    {{- else if eq .Params.category "thoughts" }}{{ $icon = "○" }}
-                    {{- else if eq .Params.category "analysis" }}{{ $icon = "▣" }}
+                    {{- $categoryIcon := index site.Params.categoryIcons .Params.category }}
+                    {{- if $categoryIcon }}
+                        {{- $iconClass = $categoryIcon }}
                     {{- end }}
                 {{- end }}
-                <span class="post-icon">{{ $icon }}</span>
+                <i class="nf {{ $iconClass }} post-icon"></i>
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
                 {{- if .Params.lang }}
                 <span class="post-lang">[{{ .Params.lang }}]</span>

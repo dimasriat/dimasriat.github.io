@@ -651,8 +651,15 @@ a:hover {
     display: inline-block;
     margin-right: 0.5rem;
     color: var(--dim-text);
-    font-size: 0.8rem;
+    font-size: 1rem;
     vertical-align: middle;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 /* Mobile responsive for posts */
