@@ -14,7 +14,6 @@
     
     <div class="posts-list">
         <div class="posts-header-row">
-            <div class="col-icon"></div>
             <div class="col-date">DATE</div>
             <div class="col-title">TITLE</div>
         </div>
@@ -24,21 +23,19 @@
         {{- $posts := where site.RegularPages "Section" "in" (slice "posts" "trading-journal") }}
         {{- range $posts.ByDate.Reverse }}
         <div class="post-row">
-            <div class="col-icon">
-                {{- $icon := "*" }}
-                {{- if .Params.category }}
-                    {{- if eq .Params.category "trading" }}{{ $icon = "$" }}
-                    {{- else if eq .Params.category "code" }}{{ $icon = ">" }}
-                    {{- else if eq .Params.category "life" }}{{ $icon = "@" }}
-                    {{- else if eq .Params.category "tech" }}{{ $icon = "#" }}
-                    {{- else if eq .Params.category "thoughts" }}{{ $icon = "~" }}
-                    {{- else if eq .Params.category "analysis" }}{{ $icon = "%" }}
-                    {{- end }}
-                {{- end }}
-                <span class="type-icon">[{{ $icon }}]</span>
-            </div>
             <div class="col-date">{{ .Date.Format "2006-01-02" }}</div>
             <div class="col-title">
+                {{- $icon := "●" }}
+                {{- if .Params.category }}
+                    {{- if eq .Params.category "trading" }}{{ $icon = "◆" }}
+                    {{- else if eq .Params.category "code" }}{{ $icon = "▶" }}
+                    {{- else if eq .Params.category "life" }}{{ $icon = "●" }}
+                    {{- else if eq .Params.category "tech" }}{{ $icon = "■" }}
+                    {{- else if eq .Params.category "thoughts" }}{{ $icon = "○" }}
+                    {{- else if eq .Params.category "analysis" }}{{ $icon = "▣" }}
+                    {{- end }}
+                {{- end }}
+                <span class="post-icon">{{ $icon }}</span>
                 <a href="{{ .Permalink }}">{{ .Title }}</a>
                 {{- if .Params.lang }}
                 <span class="post-lang">[{{ .Params.lang }}]</span>

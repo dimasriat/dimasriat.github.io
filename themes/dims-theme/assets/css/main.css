@@ -25,7 +25,7 @@
     
     /* Spacing */
     --spacing-unit: 1rem;
-    --max-width: 800px;
+    --max-width: 650px;
 }
 
 /* Base */
@@ -227,6 +227,16 @@ a:hover {
     font-size: 1.15rem;
     opacity: 0.8;
     margin-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.home-content ul,
+.home-content ol {
+    margin: var(--spacing-unit) 0;
+    padding-left: calc(var(--spacing-unit) * 2.5);
+}
+
+.home-content li {
+    margin-bottom: calc(var(--spacing-unit) * 0.5);
 }
 
 /* Social icons */
@@ -581,7 +591,7 @@ a:hover {
 .posts-header-row,
 .post-row {
     display: grid;
-    grid-template-columns: 60px 120px 1fr;
+    grid-template-columns: 120px 1fr;
     align-items: center;
     font-size: 0.95rem;
 }
@@ -637,6 +647,14 @@ a:hover {
     font-weight: 400;
 }
 
+.post-icon {
+    display: inline-block;
+    margin-right: 0.5rem;
+    color: var(--dim-text);
+    font-size: 0.8rem;
+    vertical-align: middle;
+}
+
 /* Mobile responsive for posts */
 @media (max-width: 600px) {
     .posts-header {
@@ -647,7 +665,7 @@ a:hover {
     
     .posts-header-row,
     .post-row {
-        grid-template-columns: 50px 100px 1fr;
+        grid-template-columns: 100px 1fr;
         font-size: 0.85rem;
     }
     

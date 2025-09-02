@@ -23,3 +23,7 @@ I hope you enjoy reading about my life :)
 ## Journal
 
 [Trading Journal](/trading-journal)
+
+## Social
+
+[GitHub](https://github.com) • [Twitter](https://twitter.com) • [Email](mailto:email@example.com)
