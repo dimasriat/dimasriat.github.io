@@ -1,0 +1,27 @@
+# theme.toml for dims-theme
+name = "dims-theme"
+license = "MIT"
+licenselink = "https://github.com/dimasriat/dimasriat.github.io/blob/main/themes/dims-theme/LICENSE"
+description = "A clean, minimal personal blog theme for dims.sh"
+homepage = "https://dims.sh/"
+tags = [
+  "blog",
+  "minimal",
+  "clean",
+  "personal",
+  "responsive",
+  "light",
+  "dark"
+]
+features = [
+  "responsive",
+  "blog",
+  "minimal",
+  "social-icons",
+  "tags"
+]
+min_version = "0.112.0"
+
+[author]
+  name = "Dimas Riat"
+  homepage = "https://dims.sh"

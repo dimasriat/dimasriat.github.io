@@ -1,0 +1,76 @@
+{{- define "main" }}
+<div class="page-content">
+    {{- if .IsHome }}
+    <section class="home-intro">
+        <h1>{{ site.Params.homeInfoParams.Title }}</h1>
+        <p>{{ site.Params.homeInfoParams.Content }}</p>
+        {{- partial "social-icons.html" . -}}
+    </section>
+    
+    <section class="recent-posts">
+        <h2>Recent Posts</h2>
+        {{- $pages := where site.RegularPages "Type" "in" site.Params.mainSections }}
+        {{- $paginator := .Paginate $pages }}
+        {{- range $paginator.Pages }}
+        <article class="post-entry">
+            <header>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+            </header>
+            {{- if .Summary }}
+            <div class="post-summary">
+                {{ .Summary | plainify | truncate 160 }}
+            </div>
+            {{- end }}
+            {{- if .Params.tags }}
+            <div class="post-tags">
+                {{- range .Params.tags }}
+                <a href="/tags/{{ . | urlize }}/" class="tag">#{{ . }}</a>
+                {{- end }}
+            </div>
+            {{- end }}
+        </article>
+        {{- end }}
+        
+        {{- if gt $paginator.TotalPages 1 }}
+        <nav class="pagination">
+            {{- if $paginator.HasPrev }}
+            <a href="{{ $paginator.Prev.URL }}" class="prev">← Previous</a>
+            {{- end }}
+            <span class="page-number">Page {{ $paginator.PageNumber }} of {{ $paginator.TotalPages }}</span>
+            {{- if $paginator.HasNext }}
+            <a href="{{ $paginator.Next.URL }}" class="next">Next →</a>
+            {{- end }}
+        </nav>
+        {{- end }}
+    </section>
+    {{- else }}
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+        {{- if .Description }}
+        <p class="description">{{ .Description }}</p>
+        {{- end }}
+    </header>
+    
+    <div class="content-list">
+        {{- range .Paginator.Pages }}
+        <article class="post-entry">
+            <header>
+                <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                <time datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+                    {{ .Date.Format "January 2, 2006" }}
+                </time>
+            </header>
+            {{- if .Summary }}
+            <div class="post-summary">
+                {{ .Summary | plainify | truncate 160 }}
+            </div>
+            {{- end }}
+        </article>
+        {{- end }}
+    </div>
+    {{- end }}
+</div>
+{{- end }}

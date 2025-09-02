@@ -1,0 +1,57 @@
+{{- define "main" }}
+<div class="page-content">
+    <header class="page-header">
+        <h1>{{ .Title }}</h1>
+    </header>
+    
+    <div class="terms-list">
+        {{- range .Data.Terms.Alphabetical }}
+        <div class="term-item">
+            <a href="{{ .Page.Permalink }}" class="term-link">
+                <span class="term-name">{{ .Page.Title }}</span>
+                <span class="term-count">({{ .Count }})</span>
+            </a>
+        </div>
+        {{- end }}
+    </div>
+</div>
+
+<style>
+.terms-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-unit);
+    margin-top: calc(var(--spacing-unit) * 2);
+}
+
+.term-item {
+    flex: 1 1 calc(50% - var(--spacing-unit));
+    min-width: 200px;
+}
+
+.term-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-unit);
+    background-color: var(--tag-bg);
+    border-radius: 0.5rem;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.term-link:hover {
+    transform: translateY(-2px);
+    text-decoration: none;
+    background-color: var(--border-color);
+}
+
+.term-name {
+    font-weight: 500;
+}
+
+.term-count {
+    opacity: 0.6;
+    font-size: 0.9rem;
+}
+</style>
+{{- end }}
